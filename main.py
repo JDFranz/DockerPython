@@ -1,6 +1,7 @@
 import uvicorn
 import os
 from fastapi import Depends, FastAPI
+import numpy as np
 
 
 app = FastAPI()
@@ -21,10 +22,10 @@ if __name__ == "__main__":
     if os.path.isfile("./certificates/SSL/KEY.key") and os.path.isfile(
         "./certificates/SSL/CERT.cer"
     ):
-        print("https://localhost:443")
-        print("https://localhost:8099")
+        print("https://localhost:443/docs")
+        print("https://localhost:8099/docs")
         uvicorn.run(
-            "app:app",
+            "main:app",
             host="0.0.0.0",
             port=8099,
             reload=True,
@@ -33,5 +34,5 @@ if __name__ == "__main__":
         )
         # uvicorn.run('main:app', host='0.0.0.0' ,port=8099 ,reload = True )
     else:
-        print("http://localhost:8099")
-        uvicorn.run("app:app", host="0.0.0.0", port=8099, reload=True)
+        print("http://localhost:8099/docs")
+        uvicorn.run("main:app", host="0.0.0.0", port=8099, reload=True)
