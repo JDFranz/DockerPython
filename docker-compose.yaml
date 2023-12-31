@@ -1,0 +1,12 @@
+version: "3"
+services:
+  dockerpythonpandas:
+    build: .
+    image: dockerpythonpandas:latest
+    volumes:
+      - ./:/project
+    ports:
+      - "8099:8099"
+      - "443:443"
+    stdin_open: true
+    tty: true

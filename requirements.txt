@@ -1,0 +1,9 @@
+deepdiff
+fastapi
+openai_functions
+uvicorn
+typing
+openai
+python-dotenv
+numpy
+pandas
